@@ -6,14 +6,12 @@
 </head>
 <body>
 	<section class="conteiner">
-		{{-- @include('partials.header') --}}
-		<div class="imprimible"></div>
+		@include('partials.header')
 
 		<main class="container-fluid">
 			@yield('main')
 		</main>
-		<div class="imprimible"></div>
-		{{-- @include('partials.footer') --}}
+		@include('partials.footer')
 
 	</section>
 
