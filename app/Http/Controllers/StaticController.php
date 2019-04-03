@@ -62,6 +62,17 @@ class StaticController extends Controller
     	# code...
     }
 
+    public function showPerfil()
+    {
+        $userId = auth()->user()->id;
+
+        $usuario = \App\User::find($userId);
+        
+        return view('miperfil', [
+                                    'usuario' => $usuario
+                                ]);
+    }
+
     
 
 }

@@ -9,7 +9,7 @@ class IndexController extends Controller
     public function show()
     {
     	$recetas = \App\Recipe::latest()
-                                ->take(12)
+                                ->take(8)
                                 ->get();
     	$dificultads = \App\Dificultad::all();
 

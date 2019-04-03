@@ -23,8 +23,8 @@
 
 			<div class="form-group ingredientes">
 				<label class="form-control-label" for="">Ingrediente</label>
-				<input class="form-control mb-3" placeholder="Que ingrediente?" type="text" name="ingrediente">
-				<input class="form-control" placeholder="Cantidad de este ingrediente" type="text" name="cantidad">
+				<input class="form-control mb-3" placeholder="Que ingrediente?" type="text" name="ingredienteYcantidad">
+				{{-- <input class="form-control" placeholder="Cantidad de este ingrediente" type="text" name="cantidad"> --}}
 			{!! $errors->first('ingrediente', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
 			</div>
 			<script>
@@ -33,11 +33,10 @@
 				var arrayIngredientes = [];
 
 				receta.addEventListener('change', function(){
-					console.log(receta.value);
 					@foreach ($ingredientes as $ingrediente)
 					if (receta.value == {{ $ingrediente->recipe_id }}) {
 						var lista = document.querySelector('#ingredientes');
-						var ingrediente = '{{ $ingrediente->ingrediente }}';
+						var ingrediente = '{{ $ingrediente->ingredienteYcantidad }}';
 						// arrayIngredientes.push() = '$ingrediente->ingrediente';
 						// ingredientes.append(ingrediente);
 						var node = document.createElement('LI');

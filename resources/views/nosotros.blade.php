@@ -9,30 +9,28 @@
 		<div class="sobre-nosotros">
 
 			<div class="parrafo">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat.</p>
+				<p>Esta página nació con la idea de brindarles recetas fáciles y saludables, 
+			centrándome en la importancia de nutrir nuestro cuerpo incorporando alimentos sanos,
+			sin aditivos ni conservantes ya que, “somos lo que comemos”.</p>
 			</div>
 
 			<div class="parrafo">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat.</p>
+				<p>No es necesario vivir a ensaladas para modelar nuestro cuerpo! 
+			Por eso te doy herramientas para escapar de la “dieta” permanente y disfrutar 
+			cada comida! Además hay opciones para celíacos, veganos y vegetarianos.</p>
 			</div>
 
 			<div class="parrafo">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat.</p>  
+				<p>No es necesario vivir a ensaladas para modelar nuestro cuerpo! 
+			Por eso te doy herramientas para escapar de la “dieta” permanente y disfrutar 
+			cada comida! Además hay opciones para celíacos, veganos y vegetarianos.</p>  
 			</div>
+
 		</div>
-		<span class="firma">Re Fáciles</span>
+		<span class="firma">Re fáciles</span>
 
 		<div class="comentarios">
-			<h2>Comentarios</h2>
+			<h1>Comentarios</h1>
 			<div class="row">
 				<div class=" comentario">
 					<div class="foto-comentario">

@@ -52,9 +52,6 @@
 					}
 					@endforeach
 				});
-				
-
-				// console.log(arrayIngredientes);
 			</script>
 
 			<ul id="instrucciones">

@@ -23,9 +23,9 @@ class CreateRefacilesTable extends Migration
             $table->string('listaEn');
             $table->integer('dificultad_id')->unsigned();
             $table->string('portada');
-            $table->text('breveDescripcion');
+            $table->text('breveDescripcion')->nullable();
             // $table->string('instrucciones');
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
             // $table->integer('tag_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
@@ -70,8 +70,7 @@ class CreateRefacilesTable extends Migration
 
         Schema::create('ingredientes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('ingrediente');
-            $table->string('cantidad');
+            $table->string('ingredienteYcantidad');
             $table->integer('recipe_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
@@ -79,7 +78,7 @@ class CreateRefacilesTable extends Migration
 
         // Schema::create('ingrediente_recipe', function (Blueprint $table) {
         //     $table->bigIncrements('id');
-        //     $table->integer('ingrediente_id')->unsigned();
+        //     $table->string('ingrediente_id')->unsigned();
         //     $table->integer('recipe_id')->unsigned();
         //     $table->softDeletes();
         //     $table->timestamps();

@@ -13,7 +13,7 @@
 			@foreach ($recetas as $receta)
 				@foreach ($receta->momentocomidas as $momentocomida)
 					@if ($momentocomida->id === 1)
-						<div class="tarjeta-receta collapse show" id="collapseOne">
+						<div class="tarjeta-receta collapse" id="collapseOne">
 							<div class="imagen">
 								<a href="receta/{{ $receta->id }}" title=""><img class="" src="{{ asset($receta->portada) }}" alt="Card image cap"></a>
 							</div>

@@ -13,8 +13,4 @@ class Instruccion extends Model
 	protected $fillable = ['recipe_id', 'numeroInstruccion', 'instruccion'];
 
 	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-    // public function recipes()
-    // {
-    // 	return $this->belongsToMany('\App\Recipe');
-    // }
 }

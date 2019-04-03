@@ -54,14 +54,14 @@ class Recipe extends Model
         return $this->belongsToMany('\App\Momentocomida');
     }
 
-    // public function ingredientes()
-    // {
-    //     return $this->belongsToMany('\App\Ingrediente');
-    // }
+    public function ingredientes()
+    {
+        return $this->hasMany('\App\Ingrediente');
+    }
 
     public function instruccions()
     {
-        return $this->belongsToMany('\App\Instruccion');
+        return $this->hasMany('\App\Instruccion');
     }
 
     public function comments()

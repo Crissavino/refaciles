@@ -11,29 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('index', 'indexController@show');
+Route::get('/', 'indexController@show');
 
 Route::get('curador', 'CuradorController@create');
 Route::post('curador', 'CuradorController@insert');
-// Route::put('curador', 'CuradorController@edit');
-
-Route::get('curador/ingredientes', 'CuradorController@createIngredientes');
-Route::post('curador/ingredientes', 'CuradorController@insertIngredientes');
-
-Route::get('curador/instrucciones', 'CuradorController@createInstrucciones');
-Route::post('curador/instrucciones', 'CuradorController@insertInstrucciones');
-
 Route::get('receta/{id}', 'RecetasController@show');
-
 //creo la ruta para los comentarios
 Route::post('receta/{id}', 'CommentsController@store');
 
-// Route::get('receta/{id}/comentario', 'CommentsController@store')->name('receta.show');
-// Route::resource('comments', 'CommentsController');
+Route::get('receta/edicion/{id}', 'CuradorController@edit');
+Route::put('receta/edicion/{id}', 'CuradorController@update');
+Route::delete('receta/edicion/{id}', 'CuradorController@destroy');
+
+//ruta para mostrar todas las recetas
+Route::get('recetasTodas', 'CuradorController@show');
 
 //nosotros quienes somos
 Route::get('nosotros', 'StaticController@show');
@@ -48,7 +44,8 @@ Route::post('recetas', 'StaticController@insertReceta');
 
 Auth::routes();
 
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/miperfil', 'StaticController@showPerfil');
 
+Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');

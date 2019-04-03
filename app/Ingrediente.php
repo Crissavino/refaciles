@@ -9,13 +9,7 @@ class Ingrediente extends Model
 {
     use SoftDeletes;
 
-	protected $fillable = ['recipe_id', 'cantidad','ingrediente'];
+	protected $fillable = ['recipe_id', 'recipe_id','ingredienteYcantidad'];
 
 	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-
-
-    // public function recipes()
-    // {
-    // 	return $this->belongsToMany('\App\Recipe');
-    // }
 }

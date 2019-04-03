@@ -1,13 +1,13 @@
 @extends('app')
 
-@section('title', 'Bienvenido')
+@section('title', 'Recetas Fáciles y Rápidas')
 
 @section('main')
 
 	<section class="row">
 		<section class="conteiner">
 
-			<div class="col-12">
+			<div class="carrousel">
 				<div id="carouselExampleIndicators" class="carousel slide mx-auto mb-5 d-block"" data-ride="carousel">
 
 					<ol class="carousel-indicators">
@@ -40,13 +40,6 @@
 			<div class="recetas">
 				@foreach ($recetas as $receta)
 					<div class="tarjeta-receta">
-						{{-- <img class="" src="{{ asset($receta->portada) }}" alt="Card image cap"> --}}
-						{{-- <div class="titulo-img-receta">
-							<a href="receta/{{ $receta->id }}" title="">
-								<img class="" src="{{ asset($receta->portada) }}" alt="Card image cap">
-								<h4>{{ $receta->titulo }}</h4>	 
-							</a> 	
-						</div> --}}
 						<div class="imagen">
 							<a href="receta/{{ $receta->id }}" title=""><img class="" src="{{ asset($receta->portada) }}" alt="Card image cap"></a>
 						</div>
@@ -61,8 +54,36 @@
 						</div>
 					</div>
 				@endforeach
-			</div>	
+			</div>
+
+			<section class="asesorias container">
+					<h2 style="text-align: center;">Asesorias Online</h2>
+
+					<h3 style="padding-top: 50px;">¿CÓMO TRABAJAMOS?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+					<h3 style="padding-top: 50px;">¿QUÉ NOS DIFERENCIA?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+					<h3 style="padding-top: 50px;">CASOS DE ÉXITO</h3>
+					<p style="padding-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>	
 		</section>	
 	</section>
-	 
+	 {{-- <script src="js/menu-movil.js"></script> --}}
 @endsection
