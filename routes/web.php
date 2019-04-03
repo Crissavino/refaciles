@@ -15,8 +15,8 @@
 //     return view('welcome');
 // });
 
-Route::get('index', 'indexController@show');
-Route::get('/', 'indexController@show');
+Route::get('index', 'IndexController@show');
+Route::get('/', 'IndexController@show');
 
 Route::get('curador', 'CuradorController@create');
 Route::post('curador', 'CuradorController@insert');
