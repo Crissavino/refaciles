@@ -19,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\CommentsController' => $baseDir . '/app/Http/Controllers/CommentsController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CuradorController' => $baseDir . '/app/Http/Controllers/CuradorController.php',
+    'App\\Http\\Controllers\\FirebaseController' => $baseDir . '/app/Http/Controllers/FirebaseController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\IndexController' => $baseDir . '/app/Http/Controllers/IndexController.php',
     'App\\Http\\Controllers\\RecetasController' => $baseDir . '/app/Http/Controllers/RecetasController.php',

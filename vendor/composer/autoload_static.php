@@ -520,6 +520,7 @@ class ComposerStaticInitb775fb3f6431a14400f7bf13a5c297c6
         'App\\Http\\Controllers\\CommentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentsController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CuradorController' => __DIR__ . '/../..' . '/app/Http/Controllers/CuradorController.php',
+        'App\\Http\\Controllers\\FirebaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/FirebaseController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/IndexController.php',
         'App\\Http\\Controllers\\RecetasController' => __DIR__ . '/../..' . '/app/Http/Controllers/RecetasController.php',
