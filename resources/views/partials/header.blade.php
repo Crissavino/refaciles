@@ -11,10 +11,10 @@
 
 		<div class="menu">
 			<ul class="">
-				<li><a href="/index" title="">Inicio</a></li>
-				<li><a href="/recetas" title="">Recetas</a></li>
-				<li><a href="/nosotros" title="">Quienes somos?</a></li>
-				<li><a href="/contacto" title="">Contacto</a></li>
+				<li><a href="{{url('index')}}" title="">Inicio</a></li>
+				<li><a href="{{url('recetas')}}" title="">Recetas</a></li>
+				<li><a href="{{url('nosotros')}}" title="">Quienes somos?</a></li>
+				<li><a href="{{url('contacto')}}" title="">Contacto</a></li>
 			</ul>
 		</div>
 		@auth
