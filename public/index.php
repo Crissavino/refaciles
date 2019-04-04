@@ -21,6 +21,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
+dd(__DIR__.'/../public_html/refaciles/vendor/autoload.php');
+
 require __DIR__.'/../public_html/refaciles/vendor/autoload.php';
 
 /*
