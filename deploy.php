@@ -22,7 +22,7 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('134.209.162.82')
+host('refaciles.com')
     ->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
     ->set('deploy_path', '/var/www/html/refaciles');   
