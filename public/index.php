@@ -21,8 +21,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-require __DIR__.'../var/www/public_html/refaciles/vendor/autoload.php';
-// require __DIR__.'/../vendor/autoload.php';
+// require __DIR__.'../var/www/public_html/refaciles/vendor/autoload.php';
+require __DIR__.'/../refaciles/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +36,8 @@ require __DIR__.'../var/www/public_html/refaciles/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'../var/www/public_html/refaciles/bootstrap/app.php';
-// $app = require_once __DIR__.'/../bootstrap/app.php';
+// $app = require_once __DIR__.'../var/www/public_html/refaciles/bootstrap/app.php';
+$app = require_once __DIR__.'/../refaciles/bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
