@@ -4,6 +4,7 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /var/www/public_html/refaciles/public/
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
