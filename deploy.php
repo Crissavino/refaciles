@@ -22,10 +22,10 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('refaciles.com')
+host('134.209.162.82')
     ->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
-    ->set('deploy_path', '/var/www/html/laravel-app');   
+    ->set('deploy_path', '/var/www/html/refaciles');   
     
 // Tasks
 
