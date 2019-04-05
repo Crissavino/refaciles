@@ -7,7 +7,7 @@ require 'recipe/laravel.php';
 set('application', 'refaciles');
 
 // Project repository
-set('repository', 'git@domain.com:username/repository.git');
+set('repository', 'git@github.com:Crissavino/refaciles.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
