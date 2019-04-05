@@ -7,7 +7,7 @@ require 'recipe/laravel.php';
 set('application', 'refaciles');
 
 // Project repository
-set('repository', 'https://github.com/Crissavino/refaciles.git');
+set('repository', 'git@domain.com:username/repository.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
@@ -22,8 +22,8 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('refaciles.com')
-    ->user('deployer')
+host('165.227.102.199')
+	->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
     ->set('deploy_path', '/var/www/html/refaciles');   
     
