@@ -7,8 +7,8 @@
 
 		@section('main')
 
-		{{-- <div class="info-receta justify-content-between text-center"> --}}
-		{{-- <div class="info-receta">
+		<div class="info-receta justify-content-between text-center">
+		<div class="info-receta">
 			<div class="titulo">
 				<h1>{{ $receta->titulo }}</h1>
 			</div>
@@ -144,9 +144,9 @@
 					@endforeach
 				@endauth				
 			</div>
-		</div> --}}
+		</div>
 
-		<div id="imprimible" class="info-receta">
+		{{-- <div id="imprimible" class="info-receta">
 			<div class="titulo">
 				<h1>{{ $receta->titulo }}</h1>
 			</div>
@@ -205,7 +205,7 @@
 
 			<div class="descripcion">
 				{{ $receta->descripcion }}
-		</div>
+		</div> --}}
 	</section>	
 
     {{-- <input type="button" name="imprimir" class="btn imprimir" value="Imprimir"> --}}
