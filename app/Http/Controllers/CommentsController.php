@@ -7,6 +7,7 @@ use App\Recipe;
 use App\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CommentRequest;
+use Carbon\Carbon;
 
 class CommentsController extends Controller
 {
@@ -49,5 +50,27 @@ class CommentsController extends Controller
     	// dd($recipe->agregarComentario($body, $recetaId));
 
         return back();
-    }
+	}
+
+	public function edit($id, $idComment)
+	{
+		$comentario = Comment::find($idComment);
+
+		$data = request()->all();
+
+		$body = ['body' => $data['bodyViejo']];
+
+		$actualiar = $comentario->update($body);
+		
+		return back();
+	}
+	
+	public function destroy($id, $idComment)
+	{
+		$comentario = Comment::find($idComment);
+
+		$borrarComentario = $comentario->delete();
+		
+		return back();
+	}
 }

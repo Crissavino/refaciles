@@ -96,12 +96,13 @@
 					@foreach ($comentarios as $comentario)
 						@if ($comentario->recipe_id === $receta->id)
 							<div class="comentarios">
+								<input type="text" name="idComentarioEliminado" id="idComentarioEliminado" value="" style="display: none;">
 								<ul class="list-group">
-									<li class="comentario list-group-item rounded">
+									<li class="comentario list-group-item rounded comentario{{$comentario->id}}" name="comentario{{ $comentario->id }}">
 										<div class="usuario-comentario">
 											@foreach ($usuario as $user)
 												@if ($comentario->user_id === $user->id)
-													<strong>{{ $user->name}}</strong> 
+													<strong>{{ $user->name}}</strong>
 												@endif
 											@endforeach
 										</div>
@@ -109,8 +110,31 @@
 											{{ $comentario->created_at->locale('es')->isoFormat('D MMM Y') }}
 										</div>
 										<div class="cuerpo-comentario">
-											{{ $comentario->body }}
+											@if (auth()->user()->id == $comentario->user_id)
+												<form method="post" action="/receta/{{$receta->id}}/{{$comentario->id}}">
+													@method('PUT')
+													@csrf
+													<textarea style="display: none;" name="bodyViejo" placeholder="Dejanos tu comentario acá." rows="3" class="form-control comentario-text-viejo" value="">{{ $comentario->body }}</textarea>	
+													<div class="comentario-viejo">{{ $comentario->body }}</div>
+													<button style="display: none;" type="submit" class="btn-comentario btn float-left btnActualizar">Actualizar</button>
+												</form>
+												<a class="btn float-left btnEdit"><i class="far fa-edit fa-1x" style="color: blue;"></i></a>
+											@else
+												{{ $comentario->body }}
+											@endif
 										</div>
+										@if (auth()->user()->id == $comentario->user_id)
+											<div>
+												<form method="post" action="/receta/{{$receta->id}}/{{$comentario->id}}">
+													@method('DELETE')
+													@csrf
+													<input type="text" style="display: none;" value="{{$comentario->id}}">
+													<button type="submit" class="btnDelete btn float-left" class="borrarComentario"><i class="far fa-trash-alt fa-1x" style="color: red;"></i></button>
+												</form>
+											</div>
+										@endif
+										{{-- <a onclick="borrarComentario({{ $comentario->id }})" class="btn float-right" class="borrarReferenteAnterior"><i class="far fa-trash-alt fa-2x" style="color: red;"></i></a> --}}
+										{{-- <a onclick="borrarReferenteAnterior({{ $referente->id }})" class="btn float-right" class="borrarReferenteAnterior"><i class="far fa-trash-alt fa-2x" style="color: red;"></i></a> --}}
 									</li>
 								</ul>
 							</div>

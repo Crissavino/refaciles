@@ -581,7 +581,7 @@ footer{
 	border: none;
 }
 
-.receta .info-receta .bloque-comentarios .comentario-input .btn-comentario{
+.btn-comentario{
 	background-color: #1c2632;
 	color: #dcd9c9;
 }
@@ -613,6 +613,23 @@ footer{
 .receta .info-receta .bloque-comentarios .comentarios .comentario .cuerpo-comentario{
 	clear: both;
 	margin-top: 40px;
+}
+
+.btnEdit{
+	float: right;
+	position: absolute;
+	bottom: 5px;
+	right: 40px;
+}
+.btnDelete{
+	float: right;
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+}
+
+.btnActualizar{
+	margin-top: 10px;
 }
 
 /*FIN CSS RECETAS*/

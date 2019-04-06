@@ -1,25 +1,33 @@
 window.onload = function(){
 
-// 	$('.multiple-items').slick({
-// 		infinite: true,
-// 		slidesToShow: 3,
-// 		slidesToScroll: 3
-// 	});
+	// var imprimir = document.querySelector('.imprimir');
 
-	var imprimir = document.querySelector('.imprimir');
-
-	imprimir.addEventListener('click', function(){
- 		var contenidoImprimible = document.getElementById('imprimible').innerHTML;
- 		var contendioOriginal = document.body.innerHTML;
+	// imprimir.addEventListener('click', function(){
+ 	// 	var contenidoImprimible = document.getElementById('imprimible').innerHTML;
+ 	// 	var contendioOriginal = document.body.innerHTML;
  		
- 		// mywindow.document.write( "<link rel=\"stylesheet\" href=\"style.css\" type=\"text/css\" media=\"print\"/>" );
+ 	// 	// mywindow.document.write( "<link rel=\"stylesheet\" href=\"style.css\" type=\"text/css\" media=\"print\"/>" );
 		
-		document.body.innerHTML = contenidoImprimible;
+	// 	document.body.innerHTML = contenidoImprimible;
 
-		window.print()
+	// 	window.print()
 
- 		document.body.innerHTML = contendioOriginal;
+ 	// 	document.body.innerHTML = contendioOriginal;
 
-	});
+	// });
 	
+
+	//cuando se cliquea para borrar UN comentario
+
+	// var comentarioTextViejo = document.querySelector('.comentario-text-viejo');
+	// var comentarioViejo = document.querySelector('.comentario-viejo');
+	var btnEdit = document.querySelector('.btnEdit');
+	
+	btnEdit.addEventListener('click', function() {
+		$('.comentario-text-viejo').show();
+		$('.btnActualizar').show();
+		$('.comentario-viejo').hide();
+	});
+
+	//fin
 }

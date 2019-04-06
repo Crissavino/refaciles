@@ -23,6 +23,8 @@ Route::post('curador', 'CuradorController@insert');
 Route::get('receta/{id}', 'RecetasController@show');
 //creo la ruta para los comentarios
 Route::post('receta/{id}', 'CommentsController@store');
+Route::put('receta/{id}/{idComment}', 'CommentsController@edit');
+Route::delete('receta/{id}/{idComment}', 'CommentsController@destroy');
 
 Route::get('receta/edicion/{id}', 'CuradorController@edit');
 Route::put('receta/edicion/{id}', 'CuradorController@update');
