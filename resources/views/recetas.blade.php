@@ -7,7 +7,6 @@
 
 		@section('main')
 
-		<div class="info-receta justify-content-between text-center">
 		<div class="info-receta">
 			<div class="titulo">
 				<h1>{{ $receta->titulo }}</h1>
