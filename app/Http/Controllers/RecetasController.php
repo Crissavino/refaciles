@@ -15,14 +15,18 @@ class RecetasController extends Controller
     	$receta = \App\Recipe::find($id);
     	$ingredientes = DB::table('ingredientes')
 											->WHERE('recipe_id', '=', $id)
-											->get();
+                                            ->get();
+                                            
     	$instrucciones = DB::table('instruccions')
 											->WHERE('recipe_id', '=', $id)
-											->get();
+                                            ->get();
+                                            
         $numeroComentarios = DB::table('comments')
                                             ->WHERE('recipe_id', '=', $id)
+                                            ->WHERE('deleted_at', '=', null)
                                             ->ORDERBY('created_at', 'des')
                                             ->get();
+
         $numeroComentarios = count($numeroComentarios) ;
                                              
         $comentarios =  \App\Comment::all();    
