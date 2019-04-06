@@ -7,7 +7,16 @@
         <div class="row justify-content-center">
             <div class="login-registro col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                    <div class="card-header">
+                        Si todavia no tenes un usuario, <strong><a href="/register">registrate</a></strong>
+                    </div>
+                    <div class="card-header">
+                        {{ __('Inicia Sesión') }}<br>
+                    </div>
+
+                    <div class="card-body">
+
+                    </div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -47,7 +56,7 @@
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
+                                            {{ __('Recordarme') }}
                                         </label>
                                     </div>
                                 </div>
@@ -56,18 +65,19 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
+                                        {{ __('Inicia Sesión') }}
                                     </button>
 
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
+                                            {{ __('Olvidaste la contraseña?') }}
                                         </a>
                                     @endif
                                 </div>
                             </div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>

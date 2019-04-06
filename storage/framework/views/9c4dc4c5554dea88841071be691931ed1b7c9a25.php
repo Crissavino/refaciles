@@ -38,7 +38,7 @@
 			<div class="registro">
 				<ul class="">
 					<li><a href="/login" class="mr-3" title="">Iniciar Sesión</a></li>
-					<li><a href="/register" title="">Registrarse</a></li>
+					
 				</ul>
 			</div>
 		<?php endif; ?>
@@ -61,7 +61,7 @@
 	            <li><a href="/nosotros">Quienes somos?</a></li>
 	            <li><a href="/contacto">Contacto</a></li>
 	           	<li><a href="/login" title="">Iniciar Sesión</a></li>
-				<li><a href="/register" title="">Registrarse</a></li>
+				
 			</ul>
 		<?php endif; ?>
 
