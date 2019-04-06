@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Contacto')
+@section('title', 'Recetas')
 
 @section('main')
 	<div class="recetas accordion">
