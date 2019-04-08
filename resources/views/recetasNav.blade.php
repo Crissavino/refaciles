@@ -68,7 +68,7 @@
 		<div class="cena">
 			@foreach ($recetas as $receta)
 				@foreach ($receta->momentocomidas as $momentocomida)
-					@if ($momentocomida->id === 4)
+					@if ($momentocomida->id === 3)
 						<div class="tarjeta-receta collapse" id="collapseThree">
 							<div class="imagen">
 								<a href="receta/{{ $receta->id }}" title=""><img class="" src="{{ asset($receta->portada) }}" alt="Card image cap"></a>
@@ -96,7 +96,7 @@
 		<div class="postre">
 			@foreach ($recetas as $receta)
 				@foreach ($receta->momentocomidas as $momentocomida)
-					@if ($momentocomida->id === 5)
+					@if ($momentocomida->id === 4)
 						<div class="tarjeta-receta collapse" id="collapseFour">
 							<div class="imagen">
 								<a href="receta/{{ $receta->id }}" title=""><img class="" src="{{ asset($receta->portada) }}" alt="Card image cap"></a>
@@ -124,7 +124,7 @@
 		<div class="snack">
 			@foreach ($recetas as $receta)
 				@foreach ($receta->momentocomidas as $momentocomida)
-					@if ($momentocomida->id === 6)
+					@if ($momentocomida->id === 5)
 						<div class="tarjeta-receta collapse" id="collapseFive">
 							<div class="imagen">
 								<a href="receta/{{ $receta->id }}" title=""><img class="" src="{{ asset($receta->portada) }}" alt="Card image cap"></a>
