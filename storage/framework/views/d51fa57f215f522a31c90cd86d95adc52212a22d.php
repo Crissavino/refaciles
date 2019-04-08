@@ -146,7 +146,7 @@
 						<?php endif; ?>
 					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 				<?php else: ?>
-					<p>Si queres dejarnos tu comentario por favor, <a href="/register" title="">registrate</a>.</p>
+					<p>Si queres dejarnos tu comentario por favor, <a href="/login" title="">iniciá sesión</a>.</p>
 					<?php $__currentLoopData = $comentarios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comentario): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 						<?php if($comentario->recipe_id === $receta->id): ?>
 							<div class="comentarios">

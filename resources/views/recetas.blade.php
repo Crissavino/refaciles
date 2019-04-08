@@ -141,7 +141,7 @@
 						@endif
 					@endforeach
 				@else
-					<p>Si queres dejarnos tu comentario por favor, <a href="/register" title="">registrate</a>.</p>
+					<p>Si queres dejarnos tu comentario por favor, <a href="/login" title="">iniciá sesión</a>.</p>
 					@foreach ($comentarios as $comentario)
 						@if ($comentario->recipe_id === $receta->id)
 							<div class="comentarios">
