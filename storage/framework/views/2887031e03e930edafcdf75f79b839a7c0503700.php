@@ -66,7 +66,7 @@
 		<div class="cena">
 			<?php $__currentLoopData = $recetas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $receta): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 				<?php $__currentLoopData = $receta->momentocomidas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $momentocomida): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-					<?php if($momentocomida->id === 4): ?>
+					<?php if($momentocomida->id === 3): ?>
 						<div class="tarjeta-receta collapse" id="collapseThree">
 							<div class="imagen">
 								<a href="receta/<?php echo e($receta->id); ?>" title=""><img class="" src="<?php echo e(asset($receta->portada)); ?>" alt="Card image cap"></a>
@@ -94,7 +94,7 @@
 		<div class="postre">
 			<?php $__currentLoopData = $recetas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $receta): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 				<?php $__currentLoopData = $receta->momentocomidas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $momentocomida): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-					<?php if($momentocomida->id === 5): ?>
+					<?php if($momentocomida->id === 4): ?>
 						<div class="tarjeta-receta collapse" id="collapseFour">
 							<div class="imagen">
 								<a href="receta/<?php echo e($receta->id); ?>" title=""><img class="" src="<?php echo e(asset($receta->portada)); ?>" alt="Card image cap"></a>
@@ -122,7 +122,7 @@
 		<div class="snack">
 			<?php $__currentLoopData = $recetas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $receta): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 				<?php $__currentLoopData = $receta->momentocomidas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $momentocomida): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-					<?php if($momentocomida->id === 6): ?>
+					<?php if($momentocomida->id === 5): ?>
 						<div class="tarjeta-receta collapse" id="collapseFive">
 							<div class="imagen">
 								<a href="receta/<?php echo e($receta->id); ?>" title=""><img class="" src="<?php echo e(asset($receta->portada)); ?>" alt="Card image cap"></a>

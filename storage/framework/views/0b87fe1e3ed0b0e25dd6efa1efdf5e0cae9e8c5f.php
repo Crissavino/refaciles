@@ -2,6 +2,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/media.css')); ?>">
+<link rel="shortcut icon" href="img/logo.ico">
 <link href="https://fonts.googleapis.com/css?family=Karla|Lora|Oswald|Lobster|Sacramento" rel="stylesheet">
 
 <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">

@@ -2,6 +2,7 @@
 {{-- <link rel="stylesheet" type="text/css" href="/css/app.css"> --}}
 {{-- <link rel="stylesheet" type="text/css" href="/css/media.css"> --}}
 <link rel="stylesheet" type="text/css" href="{{ asset('css/media.css') }}">
+<link rel="shortcut icon" href="img/logo.ico">
 <link href="https://fonts.googleapis.com/css?family=Karla|Lora|Oswald|Lobster|Sacramento" rel="stylesheet">
 {{-- <link href="/fonts/Flower-Power.ttf" rel="stylesheet"> --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
