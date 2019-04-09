@@ -160,7 +160,16 @@
 	    header .navbar .menu,
 	    header .navbar .registro {
 	        display: none;
-	    }
+			}
+			
+			.iconoNormal{
+				display: none !important;
+			}
+
+			.iconoMobile{
+				margin: 0 5px;
+				display: block !important;
+			}
 
 	/*FIN CSS HEADER*/
 }

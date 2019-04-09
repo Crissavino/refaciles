@@ -3,9 +3,24 @@
 	<nav class="navbar">
 		<div class="redes-sociales">
 			<ul class="">
-				<li class=""> <a class="" href="https://www.facebook.com/refaciles/" target="_blank" title=""><i class="fab fa-facebook-square fa-1x"></i></a> </li>
-				<li class=""> <a class="" href="https://www.instagram.com/refaciles/?hl=es-la" target="_blank" title=""><i class="fab fa-instagram fa-1x"></i></a> </li>
-				<li class=""> <a class="" href="https://ar.pinterest.com/refaciles/?eq=refaciles&etslf=4778" target="_blank" title=""><i class="fab fa-pinterest fa-1x"></i></a> </li>
+				<li class=""> 
+					<a class="" href="https://www.facebook.com/refaciles/" target="_blank" title="">
+						<i class="fab fa-facebook-square fa-1x iconoNormal"></i>
+						<i style="display:none" class="iconoMobile fab fa-facebook-square fa-2x"></i>
+					</a> 
+				</li>
+				<li class=""> 
+					<a class="" href="https://www.instagram.com/refaciles/?hl=es-la" target="_blank" title="">
+						<i class="fab fa-instagram fa-1x iconoNormal"></i>
+						<i style="display:none" class="iconoMobile fab fa-instagram fa-2x"></i>
+					</a> 
+				</li>
+				<li class=""> 
+					<a class="" href="https://ar.pinterest.com/refaciles/?eq=refaciles&etslf=4778" target="_blank" title="">
+						<i class="fab fa-pinterest fa-1x iconoNormal"></i>
+						<i style="display:none" class="iconoMobile fab fa-pinterest fa-2x"></i>
+					</a> 
+				</li>
 			</ul>
 		</div>
 
