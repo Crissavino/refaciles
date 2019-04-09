@@ -12,42 +12,53 @@ window.onload = function(){
 		    $(this).siblings('.image').addClass('selected').html(fileName);
 		});
 	//fin
+	//agregar imagen miniatura
+		var image = $(".image-input");
+		function readURL1(image) {
+			if (image.files && image.files[0]) {
+				var reader = new FileReader();
+				
+				reader.onload = function (e) {
+					$('#imagen-preview').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(image.files[0]);
+			}
+		}
+		$(".image-input").change(function(){
+			readURL1(this);
+		});
+		var cover = $(".cover-input");
+		function readURL2(cover) {
+			if (cover.files && cover.files[0]) {
+				var reader = new FileReader();
 
-	//agegar ingrediente
-		// var nuevoIngrediente = document.querySelector('.ingredientes');
-		// var agregar = document.querySelector('.agregar');
-		// var borrar = document.querySelector('.borrar');
-		// var ingredientes = [];
-		// var btnEnviar = document.querySelector('.enviar')
-		// var lista = document.querySelector('#ingredientesAgregados');
+				reader.onload = function (e) {
+					$('#portada-preview').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(cover.files[0]);
+			}
+		}
+		$(".cover-input").change(function () {
+			readURL2(this);
+		});
+	//fin
 
-		// agregar.addEventListener('click', function(){
-		// 	var ingrediente = nuevoIngrediente.value;
-		// 	ingredientes.push(ingrediente);
-		// 	nuevoIngrediente.value = '';
-
-		// 	var node = document.createElement('LI');
-		// 	var textNode = document.createTextNode(ingrediente);
-		// 	node.appendChild(textNode);
-		// 	// var lista = document.querySelector('#ingredientesAgregados');
-		// 	lista.appendChild(node);
-
-		// 	node.setAttribute('name', 'ingrediente[]');
-		// 	console.log(node);
-		// });
-	//fin agregar ingrediente
-
-
+	//validar que un check al menos este completo
+		var checkMomentoComida = document.querySelectorAll("input[name='momentocomida_id[]']");
 		
-
-
-		// $("#anadir").click(function(){
-	 //        $(".padre").append(nueva_entrada);
-	 //    });
-
-		// function borra() {
-		//     $('.hijo').first().remove();
-		//     swal('Se borro un profesional');
-		// }
-
+		checkMomentoComida.forEach(function (element, index) {
+			element.addEventListener('click', function() {
+				if (element.checked == true) {
+					checkMomentoComida.forEach(function(element){
+						element.removeAttribute('required');
+					});
+				}
+				if ($(".formCurador input:checkbox:checked").length == 0) {
+					checkMomentoComida.forEach(function (element) {
+						element.setAttribute('required', 'required');
+					});
+				}
+			});
+		});
+	//fin
 }

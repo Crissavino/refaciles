@@ -56,7 +56,7 @@
 				@endforeach
 			</div>
 
-			<section class="asesorias container">
+			{{-- <section class="asesorias container">
 					<h2 style="text-align: center;">Asesorias Online</h2>
 
 					<h3 style="padding-top: 50px;">¿CÓMO TRABAJAMOS?</h3>
@@ -82,7 +82,7 @@
 					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</section>	
+			</section>	 --}}
 		</section>	
 	</section>
 	 {{-- <script src="js/menu-movil.js"></script> --}}

@@ -15,7 +15,7 @@ class CommentsController extends Controller
         $this->middleware('auth');
     }
 
-    public function store()
+    public function storeComment()
     {
         // $recipe = Recipe::findOrFail(request()->recipe_id);
  
@@ -52,7 +52,7 @@ class CommentsController extends Controller
         return back();
 	}
 
-	public function edit($id, $idComment)
+	public function editComment($id, $idComment)
 	{
 		$comentario = Comment::find($idComment);
 
@@ -65,7 +65,7 @@ class CommentsController extends Controller
 		return back();
 	}
 	
-	public function destroy($id, $idComment)
+	public function destroyComment($id, $idComment)
 	{
 		$comentario = Comment::find($idComment);
 

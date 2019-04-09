@@ -21,13 +21,6 @@ class CuradorController extends Controller
 
     public function insert()
     {
-    	// $userId = auth()->user()->id;
-        // ini_set('upload_max_filesize', '10M'); 
-        // echo phpinfo();
-
-        // var_dump('asd');
-
-        // dd('Chau');
 
     	request()->validate(
     		[	
@@ -59,22 +52,9 @@ class CuradorController extends Controller
 
 
     	$data = request()->all();
-    	// $data['user_id'] = $userId;
-        // dd($data);
-
-		// $cover = str_slug($data['titulo']);
-		// $cover .= '-cover';
-		// $cover = $cover.'.'.request()->file('portada')->extension();
-		// $pathCover = request()->file('portada')->storeAs('public/images/covers', $cover);
-		// $pathCover = str_replace('public', 'storage', $pathCover);
-		// $data['portada'] = $pathCover;
 
         if (isset($data['portada'])) {
-            // dd('Hola');
-            //j sirve para agregarle un indice al archivo y que no arranca en 0
-            // for ($i=0; $i < count($data['portada']); $i++) { 
 
-                // $nombreArchivoCliente = request()->file('portada')[$i]->getClientOriginalName();
                 $nombreArchivoCliente = pathinfo(request()->file('portada')->getClientOriginalName(), PATHINFO_FILENAME);
 
                 $portada = $nombreArchivoCliente.'.'.request()->file('portada')->extension();
@@ -83,20 +63,13 @@ class CuradorController extends Controller
 
                 $pathPortada = str_replace('public', 'storage', $pathPortada);
 
-                // $datos = ['nombreArchivo' => $portada, 'path' => $pathPortada, 'gformulario_id' => $idGFormularioGuardado];
-
                 $data['portada'] = $pathPortada;
 
-            // }
         }
 
         if (isset($data['imagen'])) {
-            // dd('Hola');
-            //j sirve para agregarle un indice al archivo y que no arranca en 0
-            // for ($i=0; $i < count($data['portada']); $i++) { 
 
-                // $nombreArchivoCliente = request()->file('portada')[$i]->getClientOriginalName();
-                $nombreArchivoCliente = pathinfo(request()->file('portada')->getClientOriginalName(), PATHINFO_FILENAME);
+                $nombreArchivoCliente = pathinfo(request()->file('imagen')->getClientOriginalName(), PATHINFO_FILENAME);
 
                 $image = $nombreArchivoCliente.'.'.request()->file('imagen')->extension();
 
@@ -106,17 +79,7 @@ class CuradorController extends Controller
 
                 $data['imagen'] = $pathImage;
 
-            // }
         }
-
-        // dd($data['portada']);
-
-		// $image = str_slug($data['titulo']);
-		// $image .= '-image';
-		// $image = $image.'.'.request()->file('imagen')->extension();
-		// $pathImage = request()->file('imagen')->storeAs('public/images/image', $image);
-		// $pathImage = str_replace('public', 'storage', $pathImage);
-		// $data['imagen'] = $pathImage;
 
 		$guardoReceta = \App\Recipe::create($data);
 
@@ -130,7 +93,7 @@ class CuradorController extends Controller
 
         if (isset($ingredientesYcantidades[0])) {
             foreach ($ingredientesYcantidades as $ingredienteYcantidad) {
-            $guardoIngredienteYcantidad = \App\Ingrediente::create(['ingredienteYcantidad' => $ingredienteYcantidad, 'recipe_id' => $idUltimaReceta]);
+                $guardoIngredienteYcantidad = \App\Ingrediente::create(['ingredienteYcantidad' => $ingredienteYcantidad, 'recipe_id' => $idUltimaReceta]);
             }
         }
 
@@ -209,8 +172,6 @@ class CuradorController extends Controller
 
         $data = request()->all();
 
-        // dd($data);
-
         if (isset($data['portada'])) {
             $cover = str_slug($data['titulo']);
             $cover .= '-cover';
@@ -232,12 +193,9 @@ class CuradorController extends Controller
         $receta->update($data);
 
         $guardoMomentoComida = $receta->momentocomidas()->sync($data['momentocomida_id']);
-        // dd(isset($data['portada']));
 
         $ingredientes = $receta->ingredientes;
         $ingredienteYcantidadDatosActualizado = $data['ingredienteYcantidad'];
-
-        // dd(isset($ingredienteYcantidadDatosActualizado[0]));
 
         if (isset($ingredienteYcantidadDatosActualizado[0])) {
             if(count($ingredienteYcantidadDatosActualizado) === count($receta->ingredientes)) {

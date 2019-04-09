@@ -1,66 +1,71 @@
-@extends('app')
+<?php $__env->startSection('title', 'Curador de Recetas'); ?>
 
-@section('title', 'Curador de Recetas')
-
-@section('main')
+<?php $__env->startSection('main'); ?>
 
 	<section class="container">
-		<form action="{{ $receta->id }}" class="formCurador" method="post" enctype="multipart/form-data">
-			{{ csrf_field() }}
-            @method('PUT')
+		<form action="<?php echo e($receta->id); ?>" class="formCurador" method="post" enctype="multipart/form-data">
+			<?php echo e(csrf_field()); ?>
+
+            <?php echo method_field('PUT'); ?>
 			<div class="form-group">
 				<div class="form-group">
 					<label for="">Título de la receta</label>
-					<input class="form-control titulo" type="text" name="titulo" value="{{ $receta->titulo }}">
-					{!! $errors->first('titulo', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+					<input class="form-control titulo" type="text" name="titulo" value="<?php echo e($receta->titulo); ?>">
+					<?php echo $errors->first('titulo', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div>
 
-				@if ("{{asset('$receta->imagen')}}")
-			        <img src="{{ asset($receta->imagen) }}" width="200px" alt=""><br>
-			    @else
+				<?php if("<?php echo e(asset('$receta->imagen')); ?>"): ?>
+			        <img src="<?php echo e(asset($receta->imagen)); ?>" width="200px" alt=""><br>
+			    <?php else: ?>
 			            <p>No se cargó ninguna imagen</p>
-			    @endif <br>	
+			    <?php endif; ?> <br>	
 
 				<div class="form-group custom-file">
 					<label for="" class="custom-file-label image">Seleccioná la imagen que se verá en la receta</label>
 					<input class="custom-file-input image-input" type="file" lang="es" name="imagen">
-					{!! $errors->first('imagen', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+					<?php echo $errors->first('imagen', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div><br><br>
 
 				<div class="form-group">
 					<label for="">La receta se prepara para:</label><br>
-					@foreach ($momentosComidas as $momento)
-						@php
+					<?php $__currentLoopData = $momentosComidas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $momento): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						<?php
 							$momentoComidaId = $receta->momentocomidas->pluck('id')->toArray();
 							$checked = (in_array($momento->id, $momentoComidaId)) ? 'checked' : ''
-						@endphp
-						<label class="form-check-label" for="{{ $momento->getId() }}">{{ $momento->getNombre() }}</label>
-						<input {{ $checked }} type="checkbox" id="{{ $momento->getId() }}" name="momentocomida_id[]" value="{{ $momento->getId() }}">
-					@endforeach
-					{!! $errors->first('momentocomida_id.*', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+						?>
+						<label class="form-check-label" for="<?php echo e($momento->getId()); ?>"><?php echo e($momento->getNombre()); ?></label>
+						<input <?php echo e($checked); ?> type="checkbox" id="<?php echo e($momento->getId()); ?>" name="momentocomida_id[]" value="<?php echo e($momento->getId()); ?>">
+					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+					<?php echo $errors->first('momentocomida_id.*', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div>
 
 				<div class="form-group">
 					<label for="">Tiempo de preparación: (en minutos)</label>
-					<input class="form-control" type="text" name="timpoPreparacion" value="{{ $receta->timpoPreparacion }}">
-					{!! $errors->first('timpoPreparacion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+					<input class="form-control" type="text" name="timpoPreparacion" value="<?php echo e($receta->timpoPreparacion); ?>">
+					<?php echo $errors->first('timpoPreparacion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div>
 
 				<div class="form-group">
 					<label for="">Tiempo de cocción: (en minutos)</label>
-					<input class="form-control" type="text" name="timpoCoccion" value="{{ $receta->timpoCoccion }}">
-					{!! $errors->first('timpoCoccion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+					<input class="form-control" type="text" name="timpoCoccion" value="<?php echo e($receta->timpoCoccion); ?>">
+					<?php echo $errors->first('timpoCoccion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div>
 
 				<div class="form-group">
 					<label for="">Esta listo en: (en minutos)</label>
-					<input class="form-control" type="text" name="listaEn" value="{{ $receta->listaEn }}">
-					{!! $errors->first('listaEn', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+					<input class="form-control" type="text" name="listaEn" value="<?php echo e($receta->listaEn); ?>">
+					<?php echo $errors->first('listaEn', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div>
 
@@ -68,41 +73,45 @@
 					<label for="">Nivel de dificultad:</label>
 					<select class="form-control" name="dificultad_id">
 						<option value="">Nivel</option>
-						@foreach ($tipoDificultad as $dificultad)
-							@php
+						<?php $__currentLoopData = $tipoDificultad; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dificultad): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+							<?php
 								$selected = ($dificultad->id == $receta->dificultad_id) ? 'selected' : '';
-							@endphp
-							<option value="{{ $dificultad->getId() }}" {{ $selected }} >{{ $dificultad->getNombre() }}</option>
-						@endforeach
+							?>
+							<option value="<?php echo e($dificultad->getId()); ?>" <?php echo e($selected); ?> ><?php echo e($dificultad->getNombre()); ?></option>
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					</select>
-					{!! $errors->first('dificultad_id', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+					<?php echo $errors->first('dificultad_id', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div>
 
-				@if ("{{asset('$receta->portada')}}")
-			        <img src="{{ asset($receta->portada) }}" width="200px" alt=""><br>
-			    @else
+				<?php if("<?php echo e(asset('$receta->portada')); ?>"): ?>
+			        <img src="<?php echo e(asset($receta->portada)); ?>" width="200px" alt=""><br>
+			    <?php else: ?>
 			            <p>No se cargó ninguna portada</p>
-			    @endif <br>	
+			    <?php endif; ?> <br>	
 
 				<div class="form-group custom-file">
 					<label for="" class="custom-file-label cover">Seleccioná la imagen que se verá en el home</label>
 					<input class="custom-file-input cover-input" type="file" lang="es" name="portada">
-				{!! $errors->first('portada', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+				<?php echo $errors->first('portada', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div><br><br>
 
 				<div class="form-group">
 					<label for="">Breve descripcion de la comida/receta</label>
-					<textarea class="form-control" name="breveDescripcion" value="">{{ $receta->breveDescripcion }}</textarea>
-					{!! $errors->first('breveDescripcion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+					<textarea class="form-control" name="breveDescripcion" value=""><?php echo e($receta->breveDescripcion); ?></textarea>
+					<?php echo $errors->first('breveDescripcion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div>
 
 				<div class="form-group">
 					<label for="">Descripcion de la comida/receta</label>
-					<textarea class="form-control" name="descripcion" value="">{{ $receta->descripcion }}</textarea>
-					{!! $errors->first('descripcion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+					<textarea class="form-control" name="descripcion" value=""><?php echo e($receta->descripcion); ?></textarea>
+					<?php echo $errors->first('descripcion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					<div class="invalid-feedback"></div>
 				</div>
 
@@ -111,13 +120,14 @@
 						<div class="form-group hijo">
 							<input class="form-control mb-3 ingredienteYcantidad" placeholder="Cantidad e ingrediente?" type="text" name="ingredienteYcantidad[]" value="">
 						</div>
-						{!! $errors->first('ingrediente', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+						<?php echo $errors->first('ingrediente', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 					</div>
-					@foreach ($ingredientes as $ingrediente)
-						@if ($receta->id == $ingrediente->recipe_id)
-							@dump($ingrediente);
-						@endif
-					@endforeach
+					<?php $__currentLoopData = $ingredientes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ingrediente): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						<?php if($receta->id == $ingrediente->recipe_id): ?>
+							<?php dump($ingrediente); ?>;
+						<?php endif; ?>
+					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					
 					<ul id="ingredientes">
 					</ul>
@@ -158,10 +168,10 @@
 							ingredienteYcantidadN.setAttribute('name', 'ingredienteYcantidad[]')
 		                });  
 
-		                @foreach ($ingredientes as $ingrediente)
-							if ({{ $receta->id }} == {{ $ingrediente->recipe_id }}) {
+		                <?php $__currentLoopData = $ingredientes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ingrediente): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+							if (<?php echo e($receta->id); ?> == <?php echo e($ingrediente->recipe_id); ?>) {
 								var lista = document.querySelector('#ingredientes');
-								var ingrediente = '{{ $ingrediente->ingredienteYcantidad }}';
+								var ingrediente = '<?php echo e($ingrediente->ingredienteYcantidad); ?>';
 								// arrayIngredientes.push() = '$ingrediente->ingrediente';
 								// ingredientes.append(ingrediente);
 								var node = document.createElement('LI');
@@ -169,7 +179,7 @@
 								node.appendChild(textNode);
 								lista.appendChild(node);
 							}
-						@endforeach
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					</script>
 
 				<h3>Instrucciones para esta receta</h3>
@@ -179,12 +189,14 @@
 								<label class="form-control-label" for="">Instrucción</label>
 								<input class="form-control mb-3 numeroInstruccion" placeholder="Numero?" type="text" name="numeroInstruccion[]">
 							</div>
-							{!! $errors->first('numeroInstruccion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+							<?php echo $errors->first('numeroInstruccion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 							
 							<div class="form-group instruccion">
 								<input class="form-control instruccion" placeholder="Instrucción" type="text" name="instruccion[]">
 							</div>
-							{!! $errors->first('instruccion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>') !!}
+							<?php echo $errors->first('instruccion', '<p class="help-block" style="color:red;padding-top:25px";>:message</p>'); ?>
+
 						</div>
 					</div>
 
@@ -240,11 +252,11 @@
 							instruccionN.setAttribute('name', 'instruccion[]')
 		                }); 
 
-		                @foreach ($instrucciones as $instruccion)
-							if ({{ $receta->id }} == {{ $instruccion->recipe_id }}) {
+		                <?php $__currentLoopData = $instrucciones; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $instruccion): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+							if (<?php echo e($receta->id); ?> == <?php echo e($instruccion->recipe_id); ?>) {
 								var lista = document.querySelector('#instrucciones');
-								var numeroInstruccion = '{{ $instruccion->numeroInstruccion }}';
-								var instruccion = '{{ $instruccion->instruccion }}';
+								var numeroInstruccion = '<?php echo e($instruccion->numeroInstruccion); ?>';
+								var instruccion = '<?php echo e($instruccion->instruccion); ?>';
 								// arrayIngredientes.push() = '$ingrediente->ingrediente';
 								// ingredientes.append(ingrediente);
 								var node = document.createElement('LI');
@@ -252,7 +264,7 @@
 								node.appendChild(textNode);
 								lista.appendChild(node);
 							}
-						@endforeach
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					</script>
 			</div>
 
@@ -263,4 +275,6 @@
 	<script src="/js/curador.js" type="text/javascript" charset="utf-8" async defer></script>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

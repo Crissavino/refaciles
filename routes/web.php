@@ -18,20 +18,20 @@
 Route::get('index', 'IndexController@show');
 Route::get('/', 'IndexController@show');
 
-Route::get('curador', 'CuradorController@create');
-Route::post('curador', 'CuradorController@insert');
+Route::get('curador', 'CuradorController@create')->middleware('admin');
+Route::post('curador', 'CuradorController@insert')->middleware('admin');
 Route::get('receta/{id}', 'RecetasController@show');
 //creo la ruta para los comentarios
-Route::post('receta/{id}', 'CommentsController@store');
-Route::put('receta/{id}/{idComment}', 'CommentsController@edit');
-Route::delete('receta/{id}/{idComment}', 'CommentsController@destroy');
+Route::post('receta/{id}', 'CommentsController@storeComment');
+Route::put('receta/{id}/{idComment}', 'CommentsController@editComment');
+Route::delete('receta/{id}/{idComment}', 'CommentsController@destroyComment');
 
-Route::get('receta/edicion/{id}', 'CuradorController@edit');
-Route::put('receta/edicion/{id}', 'CuradorController@update');
-Route::delete('receta/edicion/{id}', 'CuradorController@destroy');
+Route::get('curador/edicion/{id}', 'CuradorController@edit')->middleware('admin');
+Route::put('curador/edicion/{id}', 'CuradorController@update')->middleware('admin');
+Route::delete('curador/edicion/{id}', 'CuradorController@destroy')->middleware('admin');
 
 //ruta para mostrar todas las recetas
-Route::get('recetasTodas', 'CuradorController@show');
+Route::get('recetasTodas', 'CuradorController@show')->middleware('admin');
 
 //nosotros quienes somos
 Route::get('nosotros', 'StaticController@show');

@@ -10,7 +10,7 @@
 
 			<div class="parrafo">
 				<p>Esta página nació con la idea de brindarles recetas fáciles y saludables, 
-			centrándome en la importancia de nutrir nuestro cuerpo incorporando alimentos sanos,
+			centrandonos en la importancia de nutrir nuestro cuerpo incorporando alimentos sanos,
 			sin aditivos ni conservantes ya que, “somos lo que comemos”.</p>
 			</div>
 
@@ -21,17 +21,19 @@
 			</div>
 
 			<div class="parrafo">
-				<p>No es necesario vivir a ensaladas para modelar nuestro cuerpo! 
-			Por eso te doy herramientas para escapar de la “dieta” permanente y disfrutar 
-			cada comida! Además hay opciones para celíacos, veganos y vegetarianos.</p>  
+				<p>Con nosotros vas a comer rico, sano y natural.
+				{{-- Sin procesados, conservantes ni aditivos. --}}
+				Haciendo comidas rápidas, fáciles y con ingredientes que los pueden comprar
+				en cualquier almacén o dietética.
+				</p>  
 			</div>
 
 		</div>
 		<span class="firma">Re fáciles</span>
 
 		<div class="comentarios">
-			<h1>Comentarios</h1>
-			<div class="row">
+			{{-- <h1>Comentarios</h1> --}}
+			{{-- <div class="row">
 				<div class=" comentario">
 					<div class="foto-comentario">
 						<img src="/img/comentario-foto.png" alt="">
@@ -73,7 +75,7 @@
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat.</p>
 				</div>
-			</div>	
+			</div>	 --}}
 		</div>
 
 	</section>
