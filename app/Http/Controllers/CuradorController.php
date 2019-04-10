@@ -21,36 +21,6 @@ class CuradorController extends Controller
 
     public function insert()
     {
-
-    	request()->validate(
-    		[	
-				// 'titulo' => 'required',
-				// 'imagen' => 'required|file|mimes:jpeg,jpg,png',
-				// 'momentocomida_id' => 'required',
-				// 'timpoPreparacion' => 'required',
-				// 'timpoCoccion' => 'required',
-				// 'listaEn' => 'required',
-				// 'dificultad_id' => 'required',
-				'portada' => 'required|file|mimes:jpeg,jpg,png|max:6000',
-				// 'breveDescripcion' => 'required',
-				// 'descripcion' => 'required',
-    		],
-    		[
-    			// 'titulo.required' => 'Tenes que ponerle un título a la receta!',
-    			// 'imagen.required' => 'Tenes que agregarle una foto a la receta!',
-				// 'imagen.mimes' => 'Solo son válidas las extensiones .jpeg, .jpg o .png!',
-				// 'momentocomida_id.required' => 'Tenes que especificar si es para el almuerzo, cena, desayuno, etc!',
-				// 'timpoPreparacion.required' => 'Tenes que decir cuanto tiempo, aproximado, se demora en preparar la receta!',
-				// 'timpoCoccion.required' => 'Tenes que decir cuanto tiempo, aproximado, se demora en cocinar la receta!',
-				// 'listaEn.required' => 'Tenes que decir cuanto tiempo, aproximado, esta lista la receta!',
-				// 'dificultad_id.required' => 'Tenes que seleccionar un nivel de dificultad!',
-				'portada.required' => 'Tenes que poner una foto de portada para la receta!',
-				'portada.mimes' => 'Solo son válidas las extensiones .jpeg, .jpg o .png!',
-				// 'breveDescripcion.required' => 'Tenes que describir brevemente algunos beneficios o porque hacer esta receta!',
-				// 'descripcion.required' => 'Tenes que contar como hacer la receta!',
-    		]);
-
-
     	$data = request()->all();
 
         if (isset($data['portada'])) {
@@ -141,34 +111,6 @@ class CuradorController extends Controller
     public function update($id)
     {
         $receta = \App\Recipe::find($id);
-
-        request()->validate(
-            [   
-                // 'titulo' => 'required',
-                // 'imagen' => 'required|file|mimes:jpeg,jpg,png',
-                // 'momentocomida_id' => 'required',
-                // 'timpoPreparacion' => 'required',
-                // 'timpoCoccion' => 'required',
-                // 'listaEn' => 'required',
-                // 'dificultad_id' => 'required',
-                // // 'portada' => 'required|file|mimes:jpeg,jpg,png',
-                // 'breveDescripcion' => 'required',
-                // 'descripcion' => 'required',
-            ],
-            [
-                // 'titulo.required' => 'Tenes que ponerle un título a la receta!',
-                // // 'imagen.required' => 'Tenes que agregarle una foto a la receta!',
-                // // 'imagen.mimes' => 'Solo son válidas las extensiones .jpeg, .jpg o .png!',
-                // 'momentocomida_id.required' => 'Tenes que especificar si es para el almuerzo, cena, desayuno, etc!',
-                // 'timpoPreparacion.required' => 'Tenes que decir cuanto tiempo, aproximado, se demora en preparar la receta!',
-                // 'timpoCoccion.required' => 'Tenes que decir cuanto tiempo, aproximado, se demora en cocinar la receta!',
-                // 'listaEn.required' => 'Tenes que decir cuanto tiempo, aproximado, esta lista la receta!',
-                // 'dificultad_id.required' => 'Tenes que seleccionar un nivel de dificultad!',
-                // // 'portada.required' => 'Tenes que poner una foto de portada para la receta!',
-                // // 'portada.mimes' => 'Solo son válidas las extensiones .jpeg, .jpg o .png!',
-                // 'breveDescripcion.required' => 'Tenes que describir brevemente algunos beneficios o porque hacer esta receta!',
-                // 'descripcion.required' => 'Tenes que contar como hacer la receta!',
-            ]);
 
         $data = request()->all();
 
